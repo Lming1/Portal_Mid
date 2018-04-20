@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 public class DaoFactory {
 
     @Bean
-    public ProductDao getProductDao() {
+    public ProductDao productDao() {
         return new ProductDao(getConnectionMaker());
     }
 
