@@ -1,10 +1,16 @@
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
 public class DaoFactory {
 
+    @Bean
     public ProductDao getProductDao() {
         return new ProductDao(getConnectionMaker());
     }
 
-    private ConnectionMaker getConnectionMaker() {
+    @Bean
+    public ConnectionMaker getConnectionMaker() {
         return new JejuConnectionMaker();
     }
 }
